@@ -1,0 +1,229 @@
+:root {
+	--theme-color: #50C878;
+	--dark-theme-color: #409c5d;
+	--darker-theme-color: #2d6e42;
+}
+
+html { scroll-behavior: smooth; }
+
+body { 
+	margin: 0; 
+	font-family: "Nunito Sans"; 
+}
+
+ol {
+	margin: 0;
+}
+
+hr {
+	border: 2px dashed var(--theme-color);
+	margin-top: -10px;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background:  var(--darker-theme-color); }
+::-webkit-scrollbar-thumb { background: var(--dark-theme-color); }
+
+/** General CSS */
+
+.hidden { 
+	display: none; 
+}
+
+/** Cover CSS */
+
+.cover {
+	background-color: var(--theme-color);
+	padding: 40px 300px;
+	padding-top: 100px;
+}
+
+.cover h1 {
+	margin: 0;
+	font-size: 40px;
+	line-height: 1;
+}
+
+.cover p {
+	margin: 20px 0;
+	line-height: 1.5;
+}
+
+input {
+	border: none;
+	padding: 9px 9px;
+	margin-top: 5px;
+	font-size: 18px;
+	width: 44%;
+}
+
+.search-btn { 
+	padding: 5px 0; 
+}
+
+select {
+	padding: 6px 0; 
+}
+
+select, .search-btn {
+	border: 2px dotted black;
+	background-color: transparent;
+	cursor: pointer;
+	font-size: 18px;
+	width: 25%;
+	display: inline-block;
+	text-align: center;
+	font-weight: bold;
+}
+
+input, select, .search-btn {
+	outline: none;
+	border-radius: 4px;
+}
+
+select:hover, .search-btn:hover, option {
+	background-color: black;
+	color: var(--theme-color);
+}
+
+/** Body CSS */
+
+.body { 
+	padding: 40px 300px; 
+}
+
+.body h1 {
+	font-size: 30px;
+}
+
+.footer {
+	margin-top: 60px;
+	text-align: center;
+	font-weight: bold;
+	background-color: var(--theme-color);
+	padding: 10px;
+}
+
+.header {
+	margin: 20px 0;
+}
+
+.header a {
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+	margin-right: 10px;
+}
+
+.header a:hover {
+	text-decoration: underline;
+}
+
+.suggestions {
+	position: absolute;
+	background-color: white;
+	color: black;
+	border-radius: 5px;
+	margin-top: 4px;
+	width: 20%;
+	max-height: 50%;
+	overflow-x: hidden;
+	box-shadow: -5px 5px 8px #818181;
+	z-index: 2;
+}
+
+.suggestions p {
+	margin: 0px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.suggestions p:hover, .tl, .suggestions .active {
+	background-color: var(--dark-theme-color);
+	color: white;
+}
+
+.tl { font-size: 20px; }
+
+
+.word {
+	padding: 20px;
+	border: 2px dashed var(--theme-color);
+	border-radius: 4px;
+	margin: 10px 0;
+}
+
+.word p {
+	margin: 0;
+}
+
+.word h2 {
+	margin: 0;
+	display: inline-block;
+	overflow-x: auto;
+	max-width: 100%;
+	position: relative;
+	top: 5px;
+}
+
+.word .id {
+	opacity: .8;
+	margin-top: 10px;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.badge {
+	margin: 0;
+	margin-left: 5px;
+	background-color: var(--theme-color);
+	color: white;
+	padding: 2px 8px;
+	border-radius: 4px;
+	display: inline-block;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.src .badge {
+	margin-top: -10px;
+}
+
+.text:not(li) {
+	margin-top: 10px;
+}
+
+/** Resize CSS */
+
+@media (max-width: 1200px) {
+	.search-btn, select, input {
+		width: 100%;
+		margin-top: 5px;
+		top: 0px;
+	} 
+
+	.cover, .body {
+		padding: 40px 200px;
+	}
+
+	.suggestions {
+		width: calc(100% - 380px);
+	}
+
+	select { width: calc(100% + 16px); }
+	.search-btn { width: calc(100% + 10px); } 
+}
+
+@media (max-width: 700px) {
+	.cover, .body { padding: 30px 60px; }
+
+	.body h1 { font-size: 25px; }
+
+	 .suggestions {
+		width: calc(100% - 60px);
+	}
+}
+
+@media (max-width: 500px) {
+	.cover, .body { padding: 30px 40px; }
+}
